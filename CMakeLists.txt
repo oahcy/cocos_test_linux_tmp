@@ -13,6 +13,8 @@ set(LIB_NAME ${APP_NAME})
 set(UI_RESOURCES)
 set(PROJ_SOURCES)
 
+set(CMAKE_C_COMPILER "/usr/bin/clang")
+set(CMAKE_CXX_COMPILER "/usr/bin/clang++")
 
 list(APPEND PROJ_SOURCES
     ${CMAKE_CURRENT_LIST_DIR}/main.cc
