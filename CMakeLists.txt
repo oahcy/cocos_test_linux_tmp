@@ -13,10 +13,11 @@ set(LIB_NAME ${APP_NAME})
 set(UI_RESOURCES)
 set(PROJ_SOURCES)
 
-set(CMAKE_C_COMPILER "/usr/bin/clang")
-set(CMAKE_CXX_COMPILER "/usr/bin/clang++")
+#set(CMAKE_C_COMPILER "/usr/bin/clang")
+#set(CMAKE_CXX_COMPILER "/usr/bin/clang++")
 
 ADD_DEFINITIONS(-DV8_COMPRESS_POINTERS)
+ADD_DEFINITIONS(-D_QNX_SOURCE)
 
 list(APPEND PROJ_SOURCES
     ${CMAKE_CURRENT_LIST_DIR}/main.cc
@@ -42,11 +43,11 @@ source_group(TREE ${CMAKE_CURRENT_LIST_DIR}/../engine-native/templates/common PR
 SET(CMAKE_BUILD_WITH_INSTALL_RPATH TRUE) 
 SET(CMAKE_INSTALL_RPATH "\${ORIGIN}")
 
-set_target_properties(${APP_NAME} PROPERTIES
-COMPILE_FLAGS "-pthread"
-LINK_FLAGS "-pthread ")
+#set_target_properties(${APP_NAME} PROPERTIES
+	#COMPILE_FLAGS "-pthread"
+	#LINK_FLAGS "-pthread ")
 
-target_link_libraries(${APP_NAME} dl cocos2d)
+target_link_libraries(${APP_NAME}  cocos2d)
 target_include_directories(${APP_NAME} PRIVATE
     ${RES_DIR}/assets/proj
 )
