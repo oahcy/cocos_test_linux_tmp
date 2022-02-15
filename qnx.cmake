@@ -1,7 +1,7 @@
 set(CMAKE_SYSTEM_NAME QNX)
 
 set(arch gcc_ntoaarch64le)
-set(ntoarch arch64le)
+set(ntoarch aarch64)
 set(QNX_PROCESSOR arch64le)
 
 set(CMAKE_C_COMPILER qcc)
