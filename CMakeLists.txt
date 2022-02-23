@@ -1,4 +1,3 @@
-project(test)
 cmake_minimum_required(VERSION 3.8)
 
 
@@ -18,6 +17,7 @@ set(PROJ_SOURCES)
 
 ADD_DEFINITIONS(-DV8_COMPRESS_POINTERS)
 ADD_DEFINITIONS(-D_QNX_SOURCE)
+
 
 list(APPEND PROJ_SOURCES
     ${CMAKE_CURRENT_LIST_DIR}/main.cc
@@ -40,8 +40,9 @@ source_group(TREE ${RES_DIR}/assets PREFIX "Resources" FILES ${ASSET_FILES})
 source_group(TREE ${CMAKE_CURRENT_LIST_DIR} PREFIX "Source Files" FILES ${PROJ_SOURCES})
 source_group(TREE ${CMAKE_CURRENT_LIST_DIR}/../engine-native/templates/common PREFIX "Source Files" FILES ${PROJ_COMMON_SOURCES})
 
+SET(CMAKE_SKIP_BUILD_RPATH  FALSE)
 SET(CMAKE_BUILD_WITH_INSTALL_RPATH TRUE) 
-SET(CMAKE_INSTALL_RPATH "\${ORIGIN}")
+SET(CMAKE_INSTALL_RPATH "\$\{ORIGIN\}")
 
 #set_target_properties(${APP_NAME} PROPERTIES
 	#COMPILE_FLAGS "-pthread"

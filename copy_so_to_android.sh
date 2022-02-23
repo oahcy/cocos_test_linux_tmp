@@ -25,6 +25,12 @@ ${adb} push ${sys_lib_path}/libbz2.so.1 //data
 # Serial communications
 ${adb} push ${sys_path}/bin/stty //data
 ${adb} shell chmod +x //data/stty
+${adb} push ${sys_path}/bin/mkdir //data
+${adb} shell chmod +x //data/mkdir
+${adb} push ${sys_path}/bin/mv //data
+${adb} shell chmod +x //data/mv
+${adb} push ${sys_path}/bin/ps //data
+${adb} shell chmod +x //data/ps
 ${adb} push ${sys_path}/usr/bin/pdebug //data
 ${adb} shell chmod +x //data/pdebug
 ${adb} push ./run_on_target.sh //data
